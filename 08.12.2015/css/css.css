@@ -1,0 +1,143 @@
+body { 
+  background: url(http://www.hdwallpapers.in/walls/muscle_cars-wide.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size:cover;
+  background-size: cover;
+}
+
+.logo {
+  display: block;
+  margin: 10px auto;
+}
+
+nav ul {
+	font-family: "Times New Roman";
+	font-size: 15px;
+
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline;
+	color:#000000;
+}
+
+
+.hide{
+	display:none;
+}
+
+
+main, nav{
+  background-color: #ffffff;
+  margin: 20px auto;
+  padding: 15px;  
+}
+
+
+aside{
+	text-align: center;
+	 background-color: #ffffff;
+  margin: 20px auto;
+}
+
+footer{
+    position:fixed;
+        height: 50px;
+    bottom :0px;
+    padding:-5px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+	padding:0px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+	margin: 0px;
+	border:0px;
+	border-color:#404040 ;
+}
+
+.navbar-inverse{
+	border-color:#404040 ;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+	text-shadow: none;
+	color:#FFFFFF ;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.open>a{
+	color:#FFFFFF ;
+}
+
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+	color:#ffffff;	
+}
+
+.navbar-header{
+	color:#ffffff;	
+}
+/* pogai */
+.navbar-inverse .navbar-toggle{
+	border:0px;
+	color:#ffffff;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+      color: #000;
+      background: #404040 ;
+      text-decoration: none;
+      text-shadow:none;
+      -webkit-box-shadow: none;
+	  -moz-box-shadow: none;
+	  box-shadow: none;
+	  font-weight: bold;
+
+ }
+
+
+.row{
+    margin-left: -30px;
+  margin-left: -30px;
+}
+
+
+/*--------Izvelne dizaina noformejuma beigas----------*/
+
+h3 {
+    color: #08b6c1 !important;
+
+}
+p {
+    font-size: 16px;
+}
+
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row{
+    margin-left: -30px;
+  margin-left: -30px;
+}
+
+div.apraksts {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+div.polaroid {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
