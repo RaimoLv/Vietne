@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+    <title>Welcome To SMNC.LV</title>
 	<meta charset="UTF-8">
 	<script src="./lib/jquery-2.1.4.min.js"></script>
+      <link rel="stylesheet" href="dist/css/lightbox.css">
+
 	<link rel="stylesheet" href="./css/html5-reset.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Latest compiled and minified CSS -->
@@ -61,8 +64,6 @@
     </style>
 
 
-
-	<title>Welcome To SMNC.LV</title>
 </head>
 <body>
 	<section class = "container-fluid">
@@ -86,14 +87,14 @@
 				        <span class="icon-bar"></span>                        
 				      </button>
 				      <center>
-				      <a class="navbar-brand" href="index.html">Galvenā sadaļa</a>
-				    </div>
-				    <div class="collapse navbar-collapse" id="izvelne">
-				      <ul class="nav navbar-nav">
-				        <li><a href="galerija.html">Bilžu sadaļa</a></li>
-				        <li><a href="#">Aptauju sadaļa</a></li>
-						<li><a href="#">Mūsu Kontakti</a></li>
-				      </ul>
+                      <a class="navbar-brand" href="index.html">Galvenā sadaļa</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="izvelne">
+                      <ul class="nav navbar-nav">
+                        <li><a href="galerija.html">Bilžu sadaļa</a></li>
+                        <li><a href="Aptauja.html">Aptauju sadaļa</a></li>
+                        <li><a href="kontakti.html">Mūsu Kontakti</a></li>
+                      </ul>
 				       <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
                <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Pieslēgties</a></li>
       </ul>
@@ -119,20 +120,63 @@
 		</aside>
 
 		<main class="col-md-5">
-	<h3>Esiet sveicināti vietnē Auto Fans!</h3>
-          		<p>Šī mājas lapa ir par Pasaules Automašīnām.</p>
-          		<h3>Mašīnu izveides vēsture</h3>
-          		<p>
-          			Pirmo zināmo automobiļa rasējumu (ar atsperu piedziņu) autors ir Leonardo da Vinči (812R lpp. Codex Atlanticus), tomēr tas nedarbojās un ziņas par tā eksistenci līdz mūsdienām nav nonākušas. 2004. gadā eksperti no Florences Zinātnes vēstures muzeja pēc rasējumiem uzbūvēja šo automobili, pierādot Leonardo domas pareizību.</p> 
+            
+  <script src="dist/js/lightbox-plus-jquery.min.js"></script>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+              <h3>Galerija</h3>
 
-                <p> 1769. — 1770. gados franču izgudrotājs Žozefs Konjū uzbūvēja trīsriteņu vilcēju artilērijas ieroču pārvadāšanai. "Konjū ratiņus" uzskata ne tikai par automobiļa priekšteci, bet arī par tvaika lokomotīves pirmsākumiem, jo tie tika darbināti ar tvaika spēku. 19 gadsimtā tvaika dzinēju diližansi un rutjeri (tvaika dzinēju vilcēji, kas pārvietojās bez sliedēm) priekš parastajiem ceļiem tika būvēti Anglijā un Francijā un darbojās vairākās Eiropas valstīs, bet dēļ tā ka tie bija smagi, neērti un ar lielu resursu patēriņu, plašu atsaucību tā arī neiemantoja.</p> 
-          		</p>    
-          		<h3>Dārgākās Automasīnas</h3>
-          			<li><b>Bugatti</b> Veyron. Cena $1,700,000.</li>
-  					<li><b>Lamborghini</b>  Reventon. Cena $1,600,000. </li>
-  					<li><b>McLaren</b> Reventon. Cena $1,600,000. </li>
-  					<li><b>Ferrari</b> Enzo. Cena $670,000.</li>
-  					<li><b>Pagani Zonda </b> C12 F. Cena $667,321.</li>      
+              <div class="row">
+                <div class="col-md-6">
+                    <a href="./Images/BugattiVeyron.jpg" data-lightbox="example-1" data-title="Bugatti Veyron"><img src="./Images/BugattiVeyron.jpg" style="width:100%" />
+                    <div class="apraksts">
+                      <p>Bugatti Veyron</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>  
+
+              <div class="row">
+                <div class="col-md-6">
+                    <a href="./Images/FerrariEnzo.jpg" data-lightbox="example-1" data-title="Ferrari Enzo"><img src="./Images/FerrariEnzo.jpg" style="width:100%" />
+                    <div class="apraksts">
+                      <p>Ferrari Enzo</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>   
+
+                     <div class="row">
+                <div class="col-md-6">
+                    <a href="./Images/LamborghiniGallardo.jpg" data-lightbox="example-1" data-title="LamborghiniGallardo"><img src="./Images/LamborghiniGallardo.jpg" style="width:100%" />
+                    <div class="apraksts">
+                      <p>LamborghiniGallardo</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>   
+
+     <div class="row">
+                <div class="col-md-6">
+                    <a href="./Images/FordMustangs.jpg" data-lightbox="example-1" data-title="FordMustangs"><img src="./Images/FordMustangs.jpg" style="width:100%" />
+                    <div class="apraksts">
+                      <p>FordMustangs</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>   
+
+                     <div class="row">
+                <div class="col-md-6">
+                    <a href="./Images/Lamborghini Huracan.jpg" data-lightbox="example-1" data-title="Lamborghini Huracan"><img src="./Images/Lamborghini Huracan.jpg" style="width:100%" />
+                    <div class="apraksts">
+                      <p>Lamborghini Huracan</p>
+                    </div>
+                    </a>
+                  </div>
+                </div>   
+
    			</div>
 			</main>
 
