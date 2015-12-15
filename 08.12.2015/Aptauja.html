@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+
+    <title>Aptauja of SMNC.LV</title>
+
 	<meta charset="UTF-8">
 	<script src="./lib/jquery-2.1.4.min.js"></script>
 	<link rel="stylesheet" href="./css/html5-reset.css">
@@ -61,8 +64,6 @@
     </style>
 
 
-
-	<title>Welcome To SMNC.LV</title>
 </head>
 <body>
 	<section class = "container-fluid">
@@ -91,8 +92,8 @@
 				    <div class="collapse navbar-collapse" id="izvelne">
 				      <ul class="nav navbar-nav">
 				        <li><a href="galerija.html">Bilžu sadaļa</a></li>
-				        <li><a href="aptauja.html">Aptauju sadaļa</a></li>
-						<li><a href="kontakti.html">Mūsu Kontakti</a></li>
+				        <li><a href="#">Aptauju sadaļa</a></li>
+						<li><a href="#">Mūsu Kontakti</a></li>
 				      </ul>
 				       <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
                <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Pieslēgties</a></li>
@@ -118,22 +119,67 @@
     		</div>
 		</aside>
 
-		<main class="col-md-5">
-	<h3>Esiet sveicināti vietnē Auto Fans!</h3>
-          		<p>Šī mājas lapa ir par Pasaules Automašīnām.</p>
-          		<h3>Mašīnu izveides vēsture</h3>
-          		<p>
-          			Pirmo zināmo automobiļa rasējumu (ar atsperu piedziņu) autors ir Leonardo da Vinči (812R lpp. Codex Atlanticus), tomēr tas nedarbojās un ziņas par tā eksistenci līdz mūsdienām nav nonākušas. 2004. gadā eksperti no Florences Zinātnes vēstures muzeja pēc rasējumiem uzbūvēja šo automobili, pierādot Leonardo domas pareizību.</p> 
-
-                <p> 1769. — 1770. gados franču izgudrotājs Žozefs Konjū uzbūvēja trīsriteņu vilcēju artilērijas ieroču pārvadāšanai. "Konjū ratiņus" uzskata ne tikai par automobiļa priekšteci, bet arī par tvaika lokomotīves pirmsākumiem, jo tie tika darbināti ar tvaika spēku. 19 gadsimtā tvaika dzinēju diližansi un rutjeri (tvaika dzinēju vilcēji, kas pārvietojās bez sliedēm) priekš parastajiem ceļiem tika būvēti Anglijā un Francijā un darbojās vairākās Eiropas valstīs, bet dēļ tā ka tie bija smagi, neērti un ar lielu resursu patēriņu, plašu atsaucību tā arī neiemantoja.</p> 
-          		</p>    
-          		<h3>Dārgākās Automasīnas</h3>
-          			<li><b>Bugatti</b> Veyron. Cena $1,700,000.</li>
-  					<li><b>Lamborghini</b>  Reventon. Cena $1,600,000. </li>
-  					<li><b>McLaren</b> Reventon. Cena $1,600,000. </li>
-  					<li><b>Ferrari</b> Enzo. Cena $670,000.</li>
-  					<li><b>Pagani Zonda </b> C12 F. Cena $667,321.</li>      
-   			</div>
+  <div class="container">
+      <div class="row">
+        <main class="col-md-5">
+            <h3>Anketa</h3>
+            <form role="form">
+              <div class="form-group">
+                <label for="vards">Ievadiet vārdu:</label>
+                <input type="vards" class="form-control" id="vards">
+              </div>
+              <div class="form-group">
+                <label for="uzvards">Ievadiet uzvārdu:</label>
+                <input type="uzvards" class="form-control" id="uzvards">
+              </div>
+                 <hr>
+              <div class="form-group">
+                <label for="krasa">Ievadiet auto Marku:</label>
+                <input type="marka" class="form-control" id="marka">
+              </div>
+               <div class="form-group">
+                <label for="krasa">Ievadiet auto Klasi:</label>
+                <input type="klase" class="form-control" id="klase">
+              </div>
+                 <hr>
+              <div class = "form-group">
+                <label for="karba">Kādu ātrumkārbu Jūs izvēlētos?</label>
+                  <select class="form-control" id="karba">
+                    <option value="tukss"></option>
+                    <option value="manuala">Manuālo</option>
+                    <option value="automats">Automātisko</option>
+                  </select>
+              </div>
+              <div class = "form-group">
+                <label for="virsbuvestips">Kādu virsbūves tipu Jūs izvēlētos?</label><br>
+                <div class="radio-inline">
+                    <div class = "radio">
+                      <label><input type = "radio" name = "optionsRadios" id = "optionsRadios1" value = "apvidus" checked>Apvidus</label>
+                    </div>
+                    <div class = "radio">
+                      <label><input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "hecbeks">Hečbeks</label>
+                    </div>
+                    <div class = "radio">
+                      <label><input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "kabriolets">Kabriolets</label>
+                    </div>
+                    <div class = "radio">
+                      <label><input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "sedans">Sedans</label>
+                    </div>
+                    <div class = "radio">
+                      <label><input type = "radio" name = "optionsRadios" id = "optionsRadios2" value = "universals">Universāls</label>
+                    </div>
+                </div>
+              </div>
+              <div class = "form-group">
+                <label for="modelis">Kādu izlaiduma datumu jūs izvēlētos?</label><br>
+                    <label class="checkbox-inline"><input type="checkbox" value="">1990-1999</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="">2000-2005</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="">2005-2019</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="">2010-2015</label>
+                  </select>
+              </div>
+              <button type="submit" class="btn btn-default">Nodot Atbildes.</button>
+            </form>
 			</main>
 
 		<section class = "row">
