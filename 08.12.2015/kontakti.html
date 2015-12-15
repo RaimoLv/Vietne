@@ -53,16 +53,83 @@
     </script>
     <!-- Validacijas beigas -->
     <style>
-    .help-inline {
-        color: #FF3D00;
-        font-weight: bold;
-        float: none;
+    #map_wrapper {
+      height: 400px;
     }
-    </style>
+
+    #map_canvas {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    jQuery(function($) { 
+      var script = document.createElement('script');
+      script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+      document.body.appendChild(script);
+    });
+
+    function initialize() {
+      var map;
+      var bounds = new google.maps.LatLngBounds();
+      var mapOptions = {
+          mapTypeId: 'roadmap'
+      };
+                    
+      //Attelo karti majas lapaa
+      map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+      map.setTilt(45);
+        
+      // Atziimes uz kartes
+      var markers = [
+        ['Mana', 56.901736,24.084866],
+      ];
+                        
+      // Informacijas logu saturs
+      var infoWindowContent = [
+        ['<div class="info_content">' +
+        '<h5>SIA "Moller Auto Rīga"</h5>' +
+        '<p>Sergeja Eizenšteina iela 6A</p>' + '</div>'],
+        ['<div class="info_content">' +
+        '<h5>SIA "Moller Auto Latvia"</h5>' +
+        '<p>Kalnciema iela 170A</p>' +
+        '</div>']
+        ];
+        
+      // Attelo ieziimes majas lapaa
+      var infoWindow = new google.maps.InfoWindow(), marker, i;
+      
+      for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+        
+        // Atlauj atziimeem pievienot info logus    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        // Automaatiski centree karti taa, lai taja ietilptu visas atziimes
+        map.fitBounds(bounds);
+      }
+
+      var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(11);
+        google.maps.event.removeListener(boundsListener);
+      });
+    }
+  </script>
 
 
-
-	<title>Welcome To SMNC.LV</title>
+	<title>Contect of SMNC.LV</title>
 </head>
 <body>
 	<section class = "container-fluid">
@@ -119,21 +186,21 @@
 		</aside>
 
 		<main class="col-md-5">
-	<h3>Esiet sveicināti vietnē Auto Fans!</h3>
-          		<p>Šī mājas lapa ir par Pasaules Automašīnām.</p>
-          		<h3>Mašīnu izveides vēsture</h3>
-          		<p>
-          			Pirmo zināmo automobiļa rasējumu (ar atsperu piedziņu) autors ir Leonardo da Vinči (812R lpp. Codex Atlanticus), tomēr tas nedarbojās un ziņas par tā eksistenci līdz mūsdienām nav nonākušas. 2004. gadā eksperti no Florences Zinātnes vēstures muzeja pēc rasējumiem uzbūvēja šo automobili, pierādot Leonardo domas pareizību.</p> 
-
-                <p> 1769. — 1770. gados franču izgudrotājs Žozefs Konjū uzbūvēja trīsriteņu vilcēju artilērijas ieroču pārvadāšanai. "Konjū ratiņus" uzskata ne tikai par automobiļa priekšteci, bet arī par tvaika lokomotīves pirmsākumiem, jo tie tika darbināti ar tvaika spēku. 19 gadsimtā tvaika dzinēju diližansi un rutjeri (tvaika dzinēju vilcēji, kas pārvietojās bez sliedēm) priekš parastajiem ceļiem tika būvēti Anglijā un Francijā un darbojās vairākās Eiropas valstīs, bet dēļ tā ka tie bija smagi, neērti un ar lielu resursu patēriņu, plašu atsaucību tā arī neiemantoja.</p> 
-          		</p>    
-          		<h3>Dārgākās Automasīnas</h3>
-          			<li><b>Bugatti</b> Veyron. Cena $1,700,000.</li>
-  					<li><b>Lamborghini</b>  Reventon. Cena $1,600,000. </li>
-  					<li><b>McLaren</b> Reventon. Cena $1,600,000. </li>
-  					<li><b>Ferrari</b> Enzo. Cena $670,000.</li>
-  					<li><b>Pagani Zonda </b> C12 F. Cena $667,321.</li>      
-   			</div>
+	 <center> <h3>Kontakti</h3>
+                  <p>
+                    <b>Mājas lapu autors</b><br/>
+                    Raimonds Simanovics<br/>
+                    Rīgas Ozolciema iela 10<br/>
+                    E-pasts:
+                    <a href="Simanovics.Raiomnd@gmail.com" target="_top">Gmail.com</a><br/>
+                  </p>
+                  <p><b>Talrunis</b><br/>
+                    +37126544443<br/>
+                  </p></center>
+          <p><b>Dzīvoju :</b></p>
+          <div id="map_wrapper">
+            <div id="map_canvas" class="mapping"></div>
+          </div>          
 			</main>
 
 		<section class = "row">
