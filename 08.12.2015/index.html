@@ -11,7 +11,56 @@
 	<link rel="stylesheet" href="./lib/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="./lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="./css/css.css">
+	<link rel="stylesheet" href="./css/css.css"> 
+  <script src="./lib/jquery.validate.js"></script>
+  <script type="text/javascript">
+
+ $(document).ready(function(){
+    $("#registerHere").validate({
+    rules:{
+    name:"required",
+    Username:"required",
+    email:{required:true,email: true},
+    password:{required:true,minlength: 6},
+    cpassword:{required:true,equalTo: "#password"}
+    },
+
+    messages:{
+    name:"Ievadiet savu vārdu!",
+    Username:"Ievadiet Lietotājvārdu!",
+    email:{
+        required:"Ievadiet savu e-pasta adresi!",
+        email:"Ievadiet korektu e-pasta adresi!"},
+    password:{
+        required:"Ievadiet savu paroli!",
+        minlength:"Parolei jāsastāv vismaz no 6 rakstzīmēm!"},
+    cpassword:{
+        required:"Atkārtoti ievadiet paroli",
+        equalTo:"Atkārtoti ievadītā parole nesakrīt ar iepriekš ievadīto!"}
+    },
+
+    errorClass: "help-inline",
+    errorElement: "span",
+    highlight:function(element, errorClass, validClass) {
+        $(element).parents('.control-group').addClass('error');
+    },
+    unhighlight: function(element, errorClass, validClass) {
+        $(element).parents('.control-group').removeClass('error');
+        $(element).parents('.control-group').addClass('success');
+    }
+    });
+    });
+    </script>
+    <!-- Validacijas beigas -->
+    <style>
+    .help-inline {
+        color: #FF3D00;
+        font-weight: bold;
+        float: none;
+    }
+    </style>
+
+
 
 	<title>Welcome To SMNC.LV</title>
 </head>
@@ -46,7 +95,7 @@
 						<li><a href="#">Mūsu Kontakti</a></li>
 				      </ul>
 				       <ul class="nav navbar-nav navbar-right" style="padding-right:10px">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Registrēties</a></li>
+               <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Pieslēgties</a></li>
       </ul>
       </div><!-- /.navbar-collapse -->
   </nav>
@@ -56,11 +105,20 @@
 		</div>
 
 		<section class = "row">
-			<aside class = "col-md-3">     
+			<aside class = "col-md-3"style = "background-color:#ffffff;">
+			<h1  class = "hide">Ziņas</h1>
+				<h3>Partneri</h3>        
+            <p>
+            <b>Welcome!</b><br/>
+            <a href="http://www.rvt.lv/">
+  <img src="http://www.nozaruekspertupadomes.lv/allfiles/images/poligrafija/18.12.2014.%20R%C4%ABgas%20Valsts%20tehnikums%20svin%2095.jubileju/RVT-logo.png" alt="HTML tutorial" style="width:250px;height:250px;border:0">
+</a>
+            </p>
+    		</div>    
     		</div>
 		</aside>
 
-		<main class="col-md-6">
+		<main class="col-md-5">
 	<h3>Esiet sveicināti vietnē Auto Fans!</h3>
           		<p>Šī mājas lapa ir par Pasaules Automašīnām.</p>
           		<h3>Mašīnu izveides vēsture</h3>
@@ -79,10 +137,11 @@
 			</main>
 
 		<section class = "row">
-			<aside class = "col-md-2">
+			<aside class = "col-md-3"style = "background-color:#ffffff;">
 				<h1  class = "hide">Ziņas</h1>
 				<h3>Ziņas</h3>        
             <p>
+
             <b>Rīgā parādīts modernizētais 'Porsche 911' modelis</b><br/>
             Šonedēļ trīs dienu garumā "Porsche" oficiālajā pārstāvniecībā Rīgā klientiem un žurnālistiem speciālā pasākumā tika klātienē parādīts modernizētais "911 Carrera" modelis (991 – rūpnīcas indekss), kas pasaules debiju piedzīvoja septembrī Frankfurtes autoizstādē.<br/>
             <a href="http://www.delfi.lv/auto/zinas/foto-riga-paradits-modernizetais-porsche-911-modelis.d?id=46828063" target="_blank">Vairāk info</a>
@@ -93,6 +152,56 @@
 </div>
 </div>
 </div>
+
+ <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Modala loga galvene -->
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">Reģistrācija</h4>
+                                </div>
+                                <!-- Modala loga galvena dala -->
+                                <div class="modal-body">
+                                    <form class="form-horizontal" id="registerHere" method='post' action=''>
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <label class="control-label">Ievadiet vārdu*</label>
+                                                <div class="controls">
+                                                    <input class="form-control" id="name" name="name" placeholder="Vards" type="text" autofocus />
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">Ievadiet Lietotājvārdu*</label>
+                                                <div class="controls">
+                                                    <input class="form-control" id="Username" name="Username" placeholder="Username" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">Ievadiet e-pasta adresi*</label>
+                                                <div class="controls">
+                                                    <input class="form-control" id="email" name="email" placeholder="E-pasts" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label">Ievadiet paroli*</label>
+                                                <div class="controls">
+                                                    <input class="form-control" id="password" name="password" placeholder="Parole" type="password">
+                                                </div>
+                                            </div>                                            
+                                            <div class="control-group">
+                                                <label class="control-label"></label>
+                                                <div class="controls">
+                                                    <button type="submit" class="btn btn-primary" style="margin-left:auto;margin-right:auto;display:block;">Izveidot kontu</button>
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                    </form>
+                                </div> <!-- Modala loga galvenas dalas beigas -->
+                            </div>
+                        </div>
+                    </div><!--Modala loga beigas-->
 
 
 </section>
